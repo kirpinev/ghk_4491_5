@@ -12,7 +12,7 @@ import transfer from "./assets/transfer.png";
 import cash from "./assets/cash.png";
 import discount from "./assets/discount.png";
 import family from "./assets/family.png";
-import wink from "./assets/wink.png";
+import cinema from "./assets/cinema.png";
 import { LS, LSKeys } from "./ls";
 import { appSt } from "./style.css";
 import { ThxLayout } from "./thx/ThxLayout";
@@ -37,9 +37,9 @@ const familyProducts: Array<Product> = [
 
 const products: Array<Product> = [
   {
-    title: "Кино, музыка, книги со скидкой 30%",
-    text: "Всё в подписке Wink",
-    image: wink,
+    title: "Скидка 30% на онлайн-кинотеатр",
+    text: "Смотрите любимые фильмы, сериалы и ТВ каналы",
+    image: cinema,
     isNew: true,
   },
   {
@@ -136,7 +136,7 @@ export const App = () => {
             В вашей подписке
           </Typography.TitleResponsive>
 
-          {products.map((product, index) => (
+          {products.map((product) => (
             <div className={appSt.product} key={product.title}>
               {product.isNew && (
                 <Status
@@ -171,9 +171,8 @@ export const App = () => {
               </div>
               <img
                 src={product.image}
-                style={{ ...(index === 0 && { alignSelf: "center" }) }}
                 alt=""
-                height={index === 0 ? 45 : 96}
+                height={96}
                 className={appSt.productIcon}
               />
             </div>
